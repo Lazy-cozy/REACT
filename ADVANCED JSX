@@ -1,0 +1,111 @@
+in JSX, you can’t use the word class! You have to use className instead:
+Another JSX ‘gotcha’ involves self-closing tags.
+Everything inside of the curly braces will be treated as regular JavaScript.
+/////////////////////////////////
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// Write code here:
+ReactDOM.render(
+  <h1>{2 + 3}</h1>,
+  document.getElementById('app')
+);
+//////////////////////////////////
+
+you can access variables while inside of a JSX expression, even if those variables were declared on the outside.
+///////////////////////////////////
+// Declare a variable:
+const name = 'Gerdo';
+ 
+// Access your variable 
+// from inside of a JSX expression:
+const greeting = <p>Hello, {name}!</p>;
+////////////////////////////////////
+
+When writing JSX, it’s common to use variables to set attributes.
+///////////////////////////////
+ 
+const sideLength = "200px";
+ 
+const panda = (
+  <img 
+    src="images/panda.jpg" 
+    alt="panda" 
+    height={sideLength} 
+    width={sideLength} />
+);
+///////////////////////////////
+
+JSX elements can have event listeners, just like HTML elements can. 
+<img onClick={myFunc} />
+
+you can not inject an if statement into a JSX expression.
+
+JSX Conditionals: The Ternary Operator
+you write x ? y : z, where x, y, and z are all JavaScript expressions. 
+When your code is executed, x is evaluated as either “truthy” or “falsy.” 
+If x is truthy, then the entire ternary operator returns y. 
+If x is falsy, then the entire ternary operator returns z
+///////////////////////////////
+const headline = (
+  <h1>
+    { age >= drinkingAge ? 'Buy Drink' : 'Do Teen Stuff' }
+  </h1>
+);
+////////////////////////////////
+
+JSX Conditionals: &&
+If the expression on the left of the && evaluates as true,then the JSX on the right of the && will be rendered.
+If the first expression is false, however, then the JSX to the right of the && will be ignored and not rendered.
+
+.map in JSX
+
+example 
+const strings = ['Home', 'Shop', 'About Me'];
+ 
+const listItems = strings.map(string => <li>{string}</li>);
+ 
+<ul>{listItems}</ul>
+
+Keys
+
+A key is a JSX attribute. The attribute’s name is key. The attribute’s value should be something unique, similar to an id attribute.
+keys don’t do anything that you can see! React uses them internally to keep track of lists.
+If you don’t use keys when you’re supposed to, React might accidentally scramble your list-items into the wrong order.
+
+key value 
+Each key must be a unique string that React can use to correctly pair each rendered element with its corresponding item in the array.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
