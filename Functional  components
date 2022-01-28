@@ -1,0 +1,12 @@
+///////////////
+export const <name> = () => {
+  return ;
+};
+
+Function Components and Props
+To access these props, give your function component a parameter named props. 
+Within the function body, you can access the props using this pattern: props.propertyName.
+
+Function components are React components defined as JavaScript functions
+Function components must return JSX
+Function components may accept a props parameter. Expect it to be a JavaScript object
